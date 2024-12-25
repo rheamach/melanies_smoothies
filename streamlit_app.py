@@ -23,7 +23,7 @@ connection_parameters = {
 
 new_session = Session.builder.configs(connection_parameters).create()
 #session = get_active_session()
-my_dataframe = new_session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col(SEARCH_ON))
+my_dataframe = new_session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 st.stop
 
