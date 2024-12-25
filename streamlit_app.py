@@ -15,7 +15,13 @@ st.write(
 name_on_order = st.text_input("Name on Smoothie:")
 st.write("The name on your smoothie will be: ", name_on_order)
 
-session = Session.builder.config("connection_name", "myconnection").create()
+connection_parameters = {
+   "account": "PHHSQMJ-WC97473",
+   "user": "rhea20",
+   "password": "Roshan@2012"
+   }
+
+new_session = Session.builder.configs(connection_parameters).create()
 #session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
